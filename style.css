@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --nav-bg-color:rgba(255, 255, 255, .1);
+    --bg-color:#171f2b;
+    --secondnd-bg-color:#1f2733;
+    --third-bg-color:#2d3542;
+    --main-color:#0ef;
+    /* --main-color:rgb(1, 229, 187); */
+    --white-color:#fff;
+    --tab-list-color:#7c8594;
+}
+
+::selection{
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+::-webkit-scrollbar{
+    width: .5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 1rem;
+}
+
+::placeholder{
+    color: var(--white-color);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    color: var(--white-color);
+    overflow: hidden;
+    background-color: rgb(2, 94, 63);
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+.nav{
+    position:fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform:translateX(-50%);
+    width: 40rem;
+    padding: 2rem 0;
+    background: var(--nav-bg-color);
+    border-radius: 5rem;
+    z-index: 100;
+}
+
+.nav .nav-list{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-list li{
+    position:relative;
+    display: flex;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-list li:hover,
+.nav-list li.active{
+    color: var(--main-color);
+}
+
+.tooltip{
+    position:absolute;
+    top:-4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: .3rem 1rem;
+    background: var(--main-color);
+    border-radius: .4rem;
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    font-weight: 500;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+}
+
+.nav-list li:hover .tooltip{
+    visibility: visible;
+    opacity: 1;
+}
