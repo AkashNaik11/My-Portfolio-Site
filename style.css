@@ -347,7 +347,7 @@ p{
 }
 
 .resume-item h4:nth-child(1),
-.resume-item h4:nth-child(4){
+.resume-item h4:nth-child(3){
     font-size: 1.7rem;
     color: var(--main-color);
     font-weight: 400;
@@ -356,4 +356,38 @@ p{
 .resume-item h4:nth-child(3){
     position: relative;
     color:var(--white-color);
+    margin-left: 2rem;
+}
+
+.resume-item h4:nth-child(3)::before{
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+.tab-item p{
+    margin-top: 1rem;
+}
+
+.resume-box.skill{
+    grid-template-columns:repeat(auto-fit, minimax(16rem, 1fr));
+}
+.resume-box.skill .resume-item{
+    align-items: center; 
+}
+
+.resume-box.skill .resume-item i{
+    font-size: 8rem;
+}
+.resume-box.skill .resume-item:hover i{
+    color: var(--main-color);
+}
+.resume-box.skill .resume-item p{
+    margin-top: 0;
 }
