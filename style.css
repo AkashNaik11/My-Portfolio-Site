@@ -18,6 +18,7 @@
     --secondnd-bg-color:#1f2733;
     --third-bg-color:#2d3542;
     --main-color:#0ef;
+    /* --main-color:rgb(250, 11, 123); */
     /* --main-color:rgb(1, 229, 187); */
     --white-color:#fff;
     --tab-list-color:#7c8594;
@@ -122,7 +123,7 @@ p{
     height: 100%;
     transform-style: preserve-3d;
     transform-origin:50% 50% -50vw;
-    transform: rotateY(-180deg);
+    transform: rotateY(-270deg);
 }
 
 .section{
@@ -145,7 +146,10 @@ p{
 .section.resume{
     transform: translateZ(-100vw) rotateY(-180deg);
     transform-origin:50% ;
+}
 
+.section.portfolio{
+    transform: translateX(-50vw) translateZ(-50vw) rotateY(-90deg);
 
 }
 
@@ -268,7 +272,8 @@ p{
     padding: 1.2rem 4rem;
 }
 
-.resume{
+.resume,
+.portfolio{
     padding-top: 2rem;
     padding-bottom: 28rem;
 }
@@ -290,7 +295,8 @@ p{
     transition: .5s;
 }
 
-.tab-list.resume-list.active{
+.tab-list.resume-list.active,
+.tab-list.portfolio-list.active{
     border-color: var(--main-color);
     color: var(--main-color);
 }
@@ -326,7 +332,8 @@ p{
     transform: scale(.8);
 }
 
-.tab-grid.resume-box.active{
+.tab-grid.resume-box.active,
+.tab-grid.portfolio-box.active {
     visibility: visible;
     opacity: 1;
     transform: scale(1);
@@ -390,4 +397,70 @@ p{
 }
 .resume-box.skill .resume-item p{
     margin-top: 0;
+}
+
+.portfolio-list:nth-child(2){
+    justify-content: flex-end;
+
+}
+
+.portfolio-box.work .portfolio-item::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--third-bg-color);
+    border-radius: .8rem;
+    z-index: 1;
+    opacity: 0;
+}
+
+.portfolio-box.work .portfolio-item:hover::before{
+    opacity: .9;
+
+}
+
+
+.portfolio-box.work .portfolio-item{
+    position: relative;
+}
+
+.portfolio-item .work-img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.portfolio-item .work-img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* object-fit: contain; */
+    transition: .3s;
+}
+
+.portfolio-item:hover .work-img img{
+    transform: scale(1.2);
+}
+
+.portfolio-item .work-info{
+    z-index: 1;
+}
+
+.portfolio-item .work-info h4{
+    line-height: 1;
+}
+
+.portfolio-item .work-info .tech-used{
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--white-color);
+    padding-bottom: 1rem;
+    margin-bottom:1rem ;
 }
